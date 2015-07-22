@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Manual Annotator</title>
+
+        <style>
+            div {
+                padding:0;
+                margin:0;
+            }
+            span {
+                padding: 4px;
+            }
+            .coded_p {
+                background-color: #9cf;
+                color: black;
+            }
+            .coded_l {
+                background-color: #fc9;
+                color: black;
+            }
+            .coded_h {
+                background-color: #06c;
+                color: white;
+            }
+            .coded_p.long {
+                background-color: #f55;
+                color: white;
+            }
+            li p {
+                margin: 6px 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        {{!help}}
+
+        <p>
+            <strong>Press begin to start annotating the following:</strong>
+        </p>
+
+        <ul>
+            {{!urls}}
+        </ul>
+
+        <p>
+            <strong>Note:</strong> Documents are downloaded and parsed during page loads, so expect a few seconds of delay between each completed task.
+        </p>
+
+        <form method="post">
+            <input type="submit" value="Begin" />
+        </form>
+    </body>
+</html>
