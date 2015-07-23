@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 def main():
 
     urls = [line.strip() for line in sys.stdin]
-    extract = Extract(sys.argv[1], urls, 120)
+    extract = Extract(sys.argv[2], urls, int(sys.argv[1]))
 
     get("/")(extract.start_page)
     post("/")(extract.annotate_page)
@@ -79,6 +79,7 @@ class Extract:
 
         return template(self.help_temp, words=self.word_limit)
 
+
     def __write_annotations(self):
 
         try:
@@ -90,7 +91,6 @@ class Extract:
 
         except:
             pass
-
 
 
     def __has_next_url(self):
